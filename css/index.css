@@ -1,0 +1,128 @@
+/*font-family: 'Oswald', sans-serif;*/
+/*green color: #00C851*/
+/*purple color: #9933CC*/
+
+body{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+  padding-right: 0 !important;
+}
+
+.logo{
+  width: 100%;
+  height: auto;
+  max-height: 95px;
+}
+
+.title{
+  width: 30%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.subtitle-contain{
+  width: 30%;
+}
+
+.subtitle{
+  color: lightgrey;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.subtitle span{
+  color: #0c9f45;
+}
+
+.nav-items{
+  width: 100%;
+  background-color: #9933CC;
+}
+
+.nav-items a{
+  color: lightgrey;
+  font-size: .85rem;
+}
+
+.nav-items a:hover{
+  text-decoration: underline;
+}
+
+.head-row{
+  background-color: #00C851;
+  color: #fff;
+}
+
+.content{
+  margin-top: 175px;
+  margin-bottom: 65px;
+}
+
+.content-header{
+  font-family: Oswald;
+  font-size: 3rem;
+  color: grey;
+}
+
+footer{
+  background-color: #9933CC;
+}
+
+.snack-logo{
+  max-height: 30px;
+}
+
+.bottom-subtitle{
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  body{
+    font-size: 12px;
+  }
+
+  .logo{
+    width: 70px;
+  }
+
+  .title{
+    font-size: 4rem;
+  }
+
+  .subtitle{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title{
+    font-size: 4rem;
+  }
+
+  .subtitle{
+    display: none;
+  }
+
+  .bottom-subtitle{
+    display: inline;
+    margin-top: .5rem;
+  }
+
+  .snack-logo{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .title{
+    font-size: 2.5rem;
+  }
+
+}
