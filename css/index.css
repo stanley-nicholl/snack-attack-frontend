@@ -42,11 +42,11 @@ body{
 
 .nav-items{
   width: 100%;
-  background-color: #9933CC;
+  background-color: #00C851;
 }
 
 .nav-items a{
-  color: lightgrey;
+  color: #fff;
   font-size: .85rem;
 }
 
@@ -71,7 +71,7 @@ body{
 }
 
 footer{
-  background-color: #9933CC;
+  background-color: #00C851;
 }
 
 .snack-logo{
