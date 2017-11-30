@@ -54,11 +54,6 @@ body{
   text-decoration: underline;
 }
 
-.head-row{
-  background-color: #00C851;
-  color: #fff;
-}
-
 .content{
   margin-top: 175px;
   margin-bottom: 65px;
@@ -69,6 +64,44 @@ body{
   font-size: 3rem;
   color: grey;
 }
+
+/*TABLE STYLING TABLE STYLING*/
+
+.head-row{
+  background-color: #9933CC;
+  color: #fff;
+}
+
+.edit{
+  font-size: .7rem !important;
+}
+
+.delete{
+  font-size: .7rem !important;
+}
+
+/*TABLE STYLING TABLE STYLING*/
+
+/*ADMIN PAGE ADMIN PAGE*/
+.snack-item{
+  list-style-type: none;
+}
+
+.card-description{
+  color: grey;
+}
+
+.card-description span{
+  color: #0c9f45;
+  font-weight: bold;
+}
+
+.card-punch span{
+  color: #9933CC;
+  font-weight: bold;
+}
+
+/*ADMIN PAGE ADMIN PAGE*/
 
 footer{
   background-color: #00C851;
