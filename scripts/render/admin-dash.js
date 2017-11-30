@@ -1,3 +1,12 @@
+// const users = [
+//   {name: "stan",
+//   id: 1
+// },
+// {name: "matt",
+// id: 2
+// }
+// ]
+
 function loadPage(){
   document.getElementById('content').innerHTML = adminDashTemplate()
   document.getElementById('load-snacks').addEventListener('click', (event) => {
@@ -16,10 +25,10 @@ function loadUserList(){
   Admin.getAllUsers()
     .then(users => {
       document.getElementById('content').innerHTML = adminUserListTemplate(users)
+      document.getElementById('back-to-dashboard').addEventListener('click', loadPage())
       addDeleteListening()
       addEditListening()
     })
-
 }
 
 function loadSnackList(){
