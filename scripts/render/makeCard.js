@@ -2,7 +2,7 @@ let cardContainer = document.querySelector('#cardContainer')
 
 function loadHomePage(){
 //get all snacks then format them into an object with {images, name, description, rating}
-  User.getAllSnacks()
+  Snacks.getAllSnacks()
     .then(snacks => {
       let snackArray = snacks.data.snacks
 
