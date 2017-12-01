@@ -15,8 +15,15 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/index.css" rel="stylesheet">
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="scripts/render/index.js"></script>
+<script defer src="./scripts/templates/cardTemplate.js"></script>
+    <script defer src="./scripts/routes/app.js"></script>
+    <script defer src="./scripts/render/index.js"></script>
+
+    <script defer src="./scripts/routes/user-routes.js"></script>
+    <script defer src="./scripts/render/makeCard.js"></script>
+
 </head>
 
 <body>
@@ -27,140 +34,20 @@
         <a class="mr-3" href="#"><img class="logo" src="img/hulk-head.svg" alt=""></a>
         <div class="subtitle-contain d-flex align-items-end flex-nowrap">
           <p class="subtitle mr-3 pb-2 my-0 align-bottom">never <span>hulk</span> out again!</p>
-        </div>blue
+        </div>
       </div>
       <div class="container-fluid nav-items d-flex justify-content-end py-2 -px-2 my-0 mx-0">
-        <a href="#" id="admin" class="mr-3">ADMIN DASHBOARD</a>
+        <a href="pages/admin.html" id="admin" class="mr-3">ADMIN DASHBOARD</a>
         <a href="#" class="pr-2">Hello, <span id="user">Guest</span></a>
       </div>
     </nav>
 
     <div class="container content">
       <h2 class="content-header mb-3">SNACK HARD</h2>
-      <div class="row d-flex justify-content-around">
-        <div class="col-xl-4 col-md-6 col-sm-7 mt-5">
-          <div class="card">
 
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" class="img-fluid" alt="">
-              <a href="#stop">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
+      <div class="row d-flex justify-content-around" id="cardContainer">
 
-            <!--Button-->
-            <a href="#stop" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
 
-            <!--Card content-->
-            <div class="card-body">
-                <!--Title-->
-              <h4 class="card-title">Card title</h4>
-              <hr>
-              <!--Text-->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <!--/.Card content-->
-
-            <!-- Card footer -->
-            <div class="card-data blue-gradient">
-              <ul>
-                <li><a href="#"><small>rating</small></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-              </ul>
-            </div>
-            <!-- Card footer -->
-
-          </div>
-        <!--/.Card-->
-        </div>
-        <div class="col-xl-4 col-md-6 col-sm-7 mt-5">
-          <div class="card">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" class="img-fluid" alt="">
-              <a href="#stop">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
-
-            <!--Button-->
-            <a href="#stop" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
-
-            <!--Card content-->
-            <div class="card-body">
-                <!--Title-->
-              <h4 class="card-title">Cat title</h4>
-              <hr>
-              <!--Text-->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <!--/.Card content-->
-
-            <!-- Card footer -->
-            <div class="card-data blue-gradient">
-              <ul>
-                <li><a href="#"><small>rating</small></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-              </ul>
-            </div>
-            <!-- Card footer -->
-
-          </div>
-        <!--/.Card-->
-        </div>
-        <div class="col-xl-4 col-md-6 col-sm-7 mt-5">
-          <div class="card">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" class="img-fluid" alt="">
-              <a href="#stop">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
-
-            <!--Button-->
-            <a href="#stop" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
-
-            <!--Card content-->
-            <div class="card-body">
-                <!--Title-->
-              <h4 class="card-title">Card title</h4>
-              <hr>
-              <!--Text-->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <!--/.Card content-->
-
-            <!-- Card footer -->
-            <div class="card-data blue-gradient">
-              <ul>
-                <li><a href="#"><small>rating</small></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-              </ul>
-            </div>
-            <!-- Card footer -->
-
-          </div>
-        <!--/.Card-->
-        </div>
       </div>
 
 

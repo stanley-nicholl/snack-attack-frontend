@@ -1,10 +1,7 @@
-class makeCard {
-  constructor(){}
+function cardTemplate(id, name, image, description, aveRating){
 
-  static makeCard(name, image, description, aveRating){
-
-    `<div class="col-xl-4 col-md-6 col-sm-7 mt-5">
-      <div class="card">
+  return  ` 
+      <div class="card" id=${id}>
 
         <!--Card image-->
         <div class="view overlay hm-white-slight">
@@ -42,5 +39,3 @@ class makeCard {
         <!-- Card footer -->
       </div>`
   }
-}
-module.exports = makeCard
