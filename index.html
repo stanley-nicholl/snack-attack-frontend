@@ -17,7 +17,7 @@
     <link href="css/index.css" rel="stylesheet">
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script defer src="./scripts/templates/cardTemplate.js"></script>
+    <script defer src="./scripts/templates/cardTemplate.js"></script>
     <script defer src="./scripts/routes/app.js"></script>
     <script defer src="./scripts/render/index.js"></script>
 
@@ -46,10 +46,122 @@
       <h2 class="content-header mb-3">SNACK HARD</h2>
 
       <div class="row d-flex justify-content-around" id="cardContainer">
+<!-- None shall delete above me -->
+
+      <!-- Button trigger modal -->
+      <div class="mx-auto">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seeSnackDeets">
+            See a snack!
+        </button>
+              <div class=" col-xl-4 col-md-6 col-sm-7 mt-5 mx-auto modal" id='seeSnackDeets' role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="card-title modal-title" id="exampleModalLabel">Grump grump</h2>
+                      <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
+                    </div>
+                    <div class=" blue-gradient">
+                      <ul class="">
+                        <li><a href="#"><small>rating</small></a></li>
+                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                        <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
+                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                        <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                      </ul>
+                    </div>
+                <!--Card image-->
+                <div class="view overlay hm-white-slight">
+                  <img src="./img/grumpCat.jpg" class="img-fluid" alt="">
+                  <a href="#snackCard-${id}">
+                    <div class="mask"></div>
+                  </a>
+                </div>
+
+                <!--Card content-->
+                <div class=" modal-body">
+                    <!--Title-->
+                  <h4 class=" modal-title">Licking, sleeping, and shitting. A Cats paradise.</h4>
+                  <hr>
+                  <!--Text-->
+                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
-      </div>
+              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                <!-- Card footer -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.Card content-->
 
+        <!-- Card footer -->
+          <!-- <div class=" modal-footer blue-gradient">
+            <ul>
+              <li><a href="#"><small>rating</small></a></li>
+              <li><a href="#"><i class="fa fa-star"></i></a></li>
+              <li><a href="#"><i class="fa fa-star"></i></a></li>
+              <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+            </ul>
+          </div> -->
+              <!-- <div class="card col-xl-8 col-md-6 col-sm-7 mt-5 modal" id='seeSnackDeets' role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="card-title modal-title" id="exampleModalLabel">Grump grump</h2>
+                      <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
+                    </div>
+
+                <div class="view overlay hm-white-slight">
+                  <img src="./img/grumpCat.jpg" class="img-fluid" alt="">
+                  <a href="#snackCard-${id}">
+                    <div class="mask"></div>
+                  </a>
+                </div>
+
+
+                <div class="card-body modal-body">
+
+                  <h4 class="card-title modal-title">Licking, sleeping, and shitting. A Cats paradise.</h4>
+                  <hr>
+
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+
+                  <div class="card-data modal-footer blue-gradient">
+                    <ul>
+                      <li><a href="#"><small>rating</small></a></li>
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                    </ul>
+                  </div>
+              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+
+              </div>
+            </div>
+            </div> -->
+
+
+        </div>
 
 
       <!-- TABLE FOR LATER USE -->
@@ -92,6 +204,9 @@
         <p class="text-white bottom-subtitle">never hulk out again!</p>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 
 </html>

@@ -1,3 +1,4 @@
+let cardContainer = document.querySelector('#cardContainer')
 
 function loadHomePage(){
 //get all snacks then format them into an object with {images, name, description, rating}
@@ -13,19 +14,19 @@ function loadHomePage(){
       return snackArr
       })
       .then (snack => {
-        let cardContainer = document.querySelector('#cardContainer')
+
         for(let i in snack){
           // console.log(snack[i]);
           let newDiv = document.createElement('div')
           newDiv.className = 'col-xl-4 col-md-6 col-sm-7 mt-5'
           newDiv.id='snackCardId' + `${snack[i].id}`
-          // console.log(newDiv);
           cardContainer.appendChild(newDiv)
         newDiv.innerHTML=cardTemplate(snack[i].id, snack[i].name, snack[i].img, snack[i].description)
         }
       })
-
-
-
   }
+
 loadHomePage()
+function snackModal(){
+
+}
