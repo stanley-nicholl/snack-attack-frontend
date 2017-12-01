@@ -4,6 +4,7 @@ window.Admin = {
   },
   getUser (id) {
     return axios.get(`${baseUserURL}/${id}`)
+
   },
   destroyUser (id) {
     return axios.delete(`${baseUserURL}/${id}`)
