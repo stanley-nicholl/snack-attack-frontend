@@ -22,17 +22,33 @@ function loadPage(){
 loadPage()
 
 function loadUserList(){
-  Admin.getAllUsers()
+  Users.getAllUsers()
     .then(users => {
-      document.getElementById('content').innerHTML = adminUserListTemplate(users)
-      document.getElementById('back-to-dashboard').addEventListener('click', loadPage())
+      const userArray = users.data.name
+      document.getElementById('content').innerHTML = adminUserListTemplate(userArray)
+      document.getElementById('back-to-dashboard').addEventListener('click', (event) => {
+        loadPage()
+      })
       addDeleteListening()
       addEditListening()
     })
+
+
+
 }
 
 function loadSnackList(){
-
+  Snacks.getAllSnacks()
+    .then(snacks => {
+      const snackArray = snacks.data.name
+      console.log(snackArray);
+      document.getElementById('content').innerHTML = adminSnackListTemplate(snackArray)
+      document.getElementById('back-to-dashboard').addEventListener('click', (event) => {
+        loadPage()
+      })
+      addDeleteListening()
+      addEditListening()
+    })
 }
 
 function addDeleteListening(){
@@ -40,15 +56,30 @@ function addDeleteListening(){
   deleteBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
       event.preventDefault()
-      const target = event.target.id
-      Admin.destroyUser(id)
-        .then(result => {
-          loadUserList()
-        })
+      const target = event.target.id.substring(6)
+      document.getElementById('confirm-delete').addEventListener('click', (event) =>{
+        event.preventDefault()
+        Users.destroyUser(target)
+          .then(result => {
+            $('#delete-modal').modal('hide')
+            loadUserList()
+          })
       })
     })
+  })
 }
 
 function addEditListening(){
-
+  let editBtns = document.querySelectorAll('.edit')
+  editBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault()
+      const target = event.target.id.substring(4)
+      console.log(target);
+      // Users.updateUser(id, body)
+      //   .then(result => {
+      //     loadUserList()
+      //   })
+      })
+    })
 }

@@ -13,9 +13,9 @@ function adminSnackListTemplate(snacks){
       <tr class="head-row peach-gradient">
         <th width="6%">#</th>
         <th width="14%">name</th>
-        <th width="14%">price</th>
-        <th width="14%">description</th>
-        <th width="14%">perishable</th>
+        <th width="8%">price</th>
+        <th width="26%">description</th>
+        <th width="8%">perishable</th>
         <th width="14%"></th>
         <th width="14%"></th>
       </tr>
@@ -23,17 +23,18 @@ function adminSnackListTemplate(snacks){
     <tbody>
     `
   snacks.forEach(snack => {
-    const {id, name, prices, description, perishable} = snack
+    const {id, name, price, description, is_perishable} = snack
     const shortDescription = description.substring(0, 141)
+    const fullPrice = `$${price}`
     result += `
     <tr>
       <th scope="row">${id}</th>
       <td valign="middle">${name}</td>
-      <td valign="middle">${price}</td>
+      <td valign="middle">${fullPrice}</td>
       <td valign="middle">${shortDescription}</td>
-      <td valign="middle">${perishable}</td>
-      <td valign="middle"><a id="edit${id}" class="edit btn btn-warning py-2 mr-0">Edit</a></td>
-      <td valign="middle"><a id="delete${id}" class="delete btn btn-danger py-2 mr-0">Delete</a></td>
+      <td valign="middle">${is_perishable}</td>
+      <td valign="middle"><a id="${id}edit" class="edit btn btn-warning py-2 mr-0">Edit</a></td>
+      <td valign="middle"><a id="${id}delete" class="delete btn btn-danger py-2 mr-0">Delete</a></td>
     </tr>
     `
   })

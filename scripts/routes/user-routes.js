@@ -1,4 +1,4 @@
-window.Admin = {
+window.Users = {
   getAllUsers () {
     return axios.get(`${baseUserURL}`)
   },
