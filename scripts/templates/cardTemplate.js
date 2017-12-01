@@ -1,19 +1,19 @@
 function cardTemplate(id, name, image, description, aveRating){
 
-  return  ` 
+  return  `
       <div class="card" id=${id}>
 
         <!--Card image-->
         <div class="view overlay hm-white-slight">
           <img src="${image}" class="img-fluid" alt="">
-          <a href="#stop">
+          <a href="#snackCard-${id}">
             <div class="mask"></div>
           </a>
         </div>
         <!--/.Card image-->
 
         <!--Button-->
-        <a href="#stop" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
+        <a href="#snackCard-${id}" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
 
         <!--Card content-->
         <div class="card-body">
