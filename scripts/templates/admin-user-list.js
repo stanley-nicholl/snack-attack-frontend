@@ -26,7 +26,7 @@ function adminUserListTemplate(users){
     `
 
   users.forEach(user => {
-    const {id, name, lastName, username, email, reviews dateJoined} = user
+    const {id, name, lastName, username, email, reviews, dateJoined} = user
     result += `
       <tr>
         <th scope="row">${id}</th>
