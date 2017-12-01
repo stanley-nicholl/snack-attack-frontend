@@ -1,20 +1,5 @@
 
-function loadAllSnacks(){
-getAllSnacks()
-  let showSnack = document.querySelector('#logSnacks')
-
-  // showSnack.addEventListener('click', event =>{
-  //   event.preventDefault()
-  //
-  //
-  //
-  //
-  // })
-  // document.querySelector('#cardContainer').innerHTML=cardTemplate()
-
-}
-
-function getAllSnacks(){
+function loadHomePage(){
 //get all snacks then format them into an object with {images, name, description, rating}
   User.getAllSnacks()
     .then(snacks => {
@@ -31,7 +16,6 @@ function getAllSnacks(){
         let cardContainer = document.querySelector('#cardContainer')
         for(let i in snack){
           // console.log(snack[i]);
-          // let showSnack = document.querySelector('#logSnacks')
           let newDiv = document.createElement('div')
           newDiv.className = 'col-xl-4 col-md-6 col-sm-7 mt-5'
           newDiv.id='snackCardId' + `${snack[i].id}`
@@ -44,4 +28,4 @@ function getAllSnacks(){
 
 
   }
-getAllSnacks()
+loadHomePage()
