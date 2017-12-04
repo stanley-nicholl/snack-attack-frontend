@@ -13,7 +13,7 @@ function cardTemplate(id, name, image, description, aveRating){
         <!--/.Card image-->
 
         <!--Button-->
-        <a href="#snackCard-${id}" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
+        <a href="#snackCard-${id}" data-toggle='modal' data-target='#snackCard-${id}' class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
 
         <!--Card content-->
         <div class="card-body">

@@ -14,19 +14,22 @@ function loadHomePage(){
       return snackArr
       })
       .then (snack => {
-
         for(let i in snack){
-          // console.log(snack[i]);
           let newDiv = document.createElement('div')
+          let newModalDiv = document.createElement('div')
           newDiv.className = 'col-xl-4 col-md-6 col-sm-7 mt-5'
-          newDiv.id='snackCardId' + `${snack[i].id}`
+          newDiv.id='snackCardId-' + `${snack[i].id}`
           cardContainer.appendChild(newDiv)
         newDiv.innerHTML=cardTemplate(snack[i].id, snack[i].name, snack[i].img, snack[i].description)
+        cardContainer.appendChild(newModalDiv)
+        newModalDiv.innerHTML=snackDetailsTemplate(snack[i].id, snack[i].name, snack[i].img, snack[i].description)
+
         }
       })
+
   }
 
 loadHomePage()
-function snackModal(){
+function snackModal(id){
 
 }
