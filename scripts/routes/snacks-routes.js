@@ -11,5 +11,8 @@ window.Snacks = {
   },
   updateSnack (id, body) {
     return axios.put(`${baseSnacksURL}/${id}`, body)
+  },
+  addSnack (body) {
+    return axios.post(`${baseSnacksURL}`, body)
   }
 }
