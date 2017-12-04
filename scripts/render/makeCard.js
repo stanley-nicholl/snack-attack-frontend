@@ -35,49 +35,54 @@ function loadHomePage(){
           snackInfo.rating= snack[i].rating
 
         }
+        return Reviews.getAllReviews()
       })
-  Reviews.getAllReviews()
+  // Reviews.getAllReviews()
     .then(reviews => {
       reviews = reviews.data.reviews
-      console.log(reviews);
-      reviewsArray=reviews
+
+      // reviewsArray=reviews
+
       for( let i = 0; i < reviews.length; i++) {
+      // console.log(reviews[i].id);
+      let reviewContainer =  document.getElementById(`reviewContainer-${reviews[i].snack_id}`)
         functionSnackArray.forEach(snack => {
-          // reviews[i].id === reviewID
-          let reviewP = document.getElementById(`review-${snack.id}`)
-          let reviewTitle = document.getElementById(`reviewT-${snack.id}`)
-          // let reviewUsername = document.getElementById(`userName${snack.id}`)
+          //
+          // let reviewP = document.getElementById(`review-${snack.id}`)
+          // let reviewTitle = document.getElementById(`reviewT-${snack.id}`)
+
           if(snack.id === reviews[i].snack_id){
-            reviewP.innerHTML += reviews[i].content
-            reviewTitle.innerHTML =reviews[i].title
-            // addUserToReview(reviews[i].user_id, `userName-${snack.id}`)
+            let newDiv = document.createElement('div')
+
+            console.log(reviews[i].user_id);
+            newDiv.innerHTML = snackReviewsTemplate(reviews[i].id, reviews[i].content, reviews[i].title)
+            reviewContainer.appendChild(newDiv)
+            addUserToReview(reviews[i].user_id, reviews[i].id)
           }
         })
       }
-      for( let i = 0; i < reviews.length; i++) {
-        functionSnackArray.forEach(snack => {
-          let reviewP = document.getElementById(`review-${snack.id}`)
-          if (reviewP.innerHTML.length === 1){
-            reviewP.innerHTML ='Be the first to review this snack!'
-          }
-        })
-      }
+      // for( let i = 0; i < reviews.length; i++) {
+      //   functionSnackArray.forEach(snack => {
+      //     let reviewP = document.getElementById(`review-${snack.id}`)
+      //     if (reviewP.innerHTML.length === 1){
+      //       reviewP.innerHTML ='Be the first to review this snack!'
+      //     }
+      //   })
+      // }
     })
-
-
 
 
   }
 
-function addUserToReview(id, snackId){
-  console.log(snackId);
-  let reviewElement = document.getElementById(snackId)
-  console.log(reviewElement);
-  Users.getUser(id)
+function addUserToReview(userId, reviewId){
+  console.log(userId, reviewId);
+  // let reviewElement = document.getElementById(`userName-${snackId}`)
+  // console.log(reviewElement);
+  Users.getUser(userId)
     .then( user => {
-
       // console.log(user.data.users.username);
-      // reviewElement.innerHTML=`${user.data.users.username}`
+      let reviewElement = document.getElementById(`userName-${reviewId}`)
+      reviewElement.innerHTML=`${user.data.users.username}`
     })
 }
 

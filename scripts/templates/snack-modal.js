@@ -27,7 +27,7 @@ return `<div class="mx-auto ">
         <div class="row ">
           <div class="modal-body snackDeetsFormat">
             <div class="float-left" style="min-width: 50%">
-              <img src="${image}" class="img-fluid" alt="Fat cat">
+              <img src="${image}" class="img-fluid" alt="Pic of ${snackName}">
               <a href="#snackCard-${id}">
                 <div class="mask"></div>
               </a>
@@ -37,26 +37,43 @@ return `<div class="mx-auto ">
                 <h3 class="snack-sub-header"> Details</h3>
                 <p> ${description}</p>
               </div>
+
+
+
+
+
               <div class="reviews ">
+
                 <h3 class="snack-sub-header"> Reviews</h3>
-                <div id="reviewContainer">
-                  <div>
-                    <h4 id='reviewT-${id}' class="float-left"> <small id='userName-${id}'></small></h4>
-                    <ul class="d-flex ulNoBullets ">
-                      <medium><strong>rating </strong></medium>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-full"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
+                <div id="reviewContainer-${id}">
+
+                <!--
+                  <div class='justify-content-start'>
+                    <div>
+                      <h4 id='reviewT-${id}'></h4>
+                    </div>
+                    <div>
+                      <h5><small id='userName-${id}'></small></h5>
+                    </div>
+                    <div class='justify-content-start'>
+                      <ul class="d-flex ulNoBullets " id='ulStarReview'>
+                        <medium><strong>rating </strong></medium>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star-half-full"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
                   </div>
                   <div>
                     <p id='review-${id}'> </p>
                   </div>
-
+*********         -->
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
