@@ -190,3 +190,6 @@ footer{
 #reviewSnackBtn{
   justify-content: flex-end;
 }
+#ulStarReview {
+  padding:0;
+}
