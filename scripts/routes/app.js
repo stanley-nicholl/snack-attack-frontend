@@ -9,5 +9,5 @@ const herokuSnacksURL = 'https://snack-attack.herokuapp.com/api/snacks'
 const baseSnacksURL = window.location.href.includes('127.0.0.1') ? localhostSnacksURL : herokuSnacksURL
 
 const localhostReviewsURL = 'http://localhost:3000/api/reviews'
-const herokuReviewsURL = 'https://snack-attack.herokuapp.com/api/'
+const herokuReviewsURL = 'https://snack-attack.herokuapp.com/api/reviews'
 const baseReviewsURL = window.location.href.includes('127.0.0.1') ? localhostReviewsURL : herokuReviewsURL
