@@ -22,6 +22,7 @@ return `
   </div>
   <div>
     <p class='noReview' id='review-${id}'>${content} </p>
+    <hr>
   </div>
 
 `
