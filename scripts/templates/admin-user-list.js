@@ -33,7 +33,7 @@ function adminUserListTemplate(users){
         <td valign="middle">${active}</td>
         <td valign="middle">${admin}</td>
         <td valign="middle"><button type="button" id="user-edit${id}" class="btn btn-warning edit" data-toggle="modal" data-target="#user-modal">Edit</button></td>
-        <td valign="middle"><button type="button" id="user-delete${id}" class="btn btn-danger delete" data-toggle="modal" data-target="#delete-modal">Delete</button></td>
+        <td valign="middle"><button type="button" id="user-delete${id}" class="btn btn-danger delete" data-toggle="modal" data-target="#delete-user-modal">Delete</button></td>
       </tr>
 
 
@@ -76,7 +76,7 @@ function adminEditUserTemplate(user){
      </div>
 
      <div class="text-center mt-1-half">
-         <button id="update-user-btn" class="btn btn-info blue-gradient mb-2">Update<i class="fa fa-send ml-1"></i></button>
+         <button id="update-user-btn" class="btn btn-info blue-gradient mb-4">Update<i class="fa fa-send ml-1"></i></button>
      </div>
     `
 

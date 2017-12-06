@@ -56,22 +56,23 @@ function addDeleteListening(){
     btn.addEventListener('click', (event) => {
       event.preventDefault()
       const target = event.target.id.split('-delete')
-      document.getElementById('confirm-delete').addEventListener('click', (event) =>{
-      event.preventDefault()
-      if(target[0] === 'user'){
+      document.getElementById('confirm-user-delete').addEventListener('click', (event) =>{
+        event.preventDefault()
         Users.destroyUser(target[1])
           .then(result => {
-            $('#delete-modal').modal('hide')
+            $('#delete-user-modal').modal('hide')
             loadUserList()
           })
-      }else{
-        Snacks.destroySnack(target[1])
-          .then(result => {
-            $('#delete-modal').modal('hide')
-            loadSnackList()
-          })
-      }
-    })
+      })
+      document.getElementById('confirm-snack-delete').addEventListener('click', (event) =>{
+        event.preventDefault()
+          Snacks.destroySnack(target[1])
+            .then(result => {
+              $('#delete-snack-modal').modal('hide')
+              loadSnackList()
+            })
+      })
+
   })
 })
 }
@@ -83,13 +84,24 @@ function addNewSnackListening(){
     $('#snack-modal').modal('toggle')
     document.getElementById('add-snack-btn').addEventListener('click', (event) =>{
       event.preventDefault()
-      console.log('test');
       const body = {}
       body.name = document.getElementById('snack-name').value
       body.description = document.getElementById('snack-description').value
       body.img = document.getElementById('snack-image').value
       body.price = document.getElementById('snack-price').value
       body.is_perishable = $('#snack-perishable').is(':checked')
+      if(!body.name || !body.description || !body.img || !body.price){
+        document.getElementById('error-modal-body').innerHTML = errorModalTemplate('name, description, image, and price are required. Please try your hand again')
+        $('#snack-modal').modal('hide')
+        $('#error-modal').modal('toggle')
+        return null
+      }
+      if(typeof body.price !== 'number'){
+        document.getElementById('error-modal-body').innerHTML = errorModalTemplate('Please be sure to use a number for price. Please try again.')
+        $('#snack-modal').modal('hide')
+        $('#error-modal').modal('toggle')
+        return null
+      }
       Snacks.addSnack(body)
         .then(result => {
           console.log('test2');
@@ -126,7 +138,6 @@ function addEditListening(){
                 active: activeStatus,
                 admin: adminStatus
               }
-              // ROUTE NOT WORKING  ROUTE NOT WORKING  ROUTE NOT WORKING
               Users.updateUser(target[1], body)
                 .then(result => {
                   $('#user-modal').modal('hide')
@@ -150,6 +161,18 @@ function addEditListening(){
               body.img = document.getElementById('snack-image').value
               body.price = document.getElementById('snack-price').value
               body.is_perishable = $('#snack-perishable').is(':checked')
+              if(!body.name || !body.description || !body.img || !body.price){
+                document.getElementById('error-modal-body').innerHTML = errorModalTemplate('name, description, image, and price are required. Please try your hand again')
+                $('#snack-modal').modal('hide')
+                $('#error-modal').modal('toggle')
+                return null
+              }
+              if(typeof body.price !== 'number'){
+                document.getElementById('error-modal-body').innerHTML = errorModalTemplate('Please be sure to use a number for price. Please try again.')
+                $('#snack-modal').modal('hide')
+                $('#error-modal').modal('toggle')
+                return null
+              }
               Snacks.updateSnack(target[1], body)
                 .then(result => {
                   $('#snack-modal').modal('hide')
