@@ -11,5 +11,8 @@ window.Snacks = {
   },
   updateSnack (id, body) {
     return axios.put(`${baseSnacksURL}/${id}`, body)
+  },
+  getAllSnackReviews (id) {
+    return axios.get(`${baseSnacksURL}/${id}/reviews`)
   }
 }
