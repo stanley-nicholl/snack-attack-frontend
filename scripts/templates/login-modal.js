@@ -1,6 +1,6 @@
 function loadLargeLoginModal(){
   return `
-  <div class="modal-content">
+  <div class="login-modal-content">
     <div class="layer">
       <span id="close" class="close text-white">&times;</span>
       <div class="login-modal-header">
@@ -78,7 +78,7 @@ function loadLargeLoginModal(){
 
 function loadSmallLoginModal(){
   return `
-  <div class="modal-content">
+  <div class="login-modal-content">
     <div class="layer">
       <span id="close" class="close text-white">&times;</span>
       <div class="login-modal-header">

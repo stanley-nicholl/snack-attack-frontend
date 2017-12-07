@@ -16,6 +16,8 @@ function loadUserList(){
   Users.getAllUsers()
     .then(users => {
       const userArray = users.data.users
+      console.log(users);
+      userArray.sort(itemSort)
       document.getElementById('content').innerHTML = adminUserListTemplate(userArray)
       document.getElementById('back-to-dashboard').addEventListener('click', (event) => {
         loadPage()
@@ -32,7 +34,7 @@ function loadSnackList(){
   Snacks.getAllSnacks()
     .then(snacks => {
       const snackArray = snacks.data.snacks
-      snackArray.sort(snackSort)
+      snackArray.sort(itemSort)
       document.getElementById('content').innerHTML = adminSnackListTemplate(snackArray)
       document.getElementById('back-to-dashboard').addEventListener('click', (event) => {
         loadPage()
@@ -43,7 +45,7 @@ function loadSnackList(){
     })
 }
 
-function snackSort(a,b) {
+function itemSort(a,b) {
   if (a.id < b.id) return -1;
   return  (a.id > b.id) ? 1 : 0;
 }

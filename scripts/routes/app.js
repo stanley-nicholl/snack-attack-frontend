@@ -11,3 +11,7 @@ const baseSnacksURL = window.location.href.includes('127.0.0.1') ? localhostSnac
 const localhostReviewsURL = 'http://localhost:3000/api/reviews'
 const herokuReviewsURL = 'https://snack-attack.herokuapp.com/api/reviews'
 const baseReviewsURL = window.location.href.includes('127.0.0.1') ? localhostReviewsURL : herokuReviewsURL
+
+const localhostAuthURL = 'http://localhost:3000/auth'
+const herokuAuthURL = 'https://snack-attack.herokuapp.com/auth'
+const baseAuthURL = window.location.href.includes('127.0.0.1') ? localhostAuthURL : herokuAuthURL
