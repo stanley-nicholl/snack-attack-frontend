@@ -1,20 +1,19 @@
 function cardTemplate(id, name, image, description, aveRating){
 
   return  `
-      <div class="card" id=${id}>
+      <div class="card" id='snack-${id}'>
 
         <!--Card image-->
         <div class="view overlay hm-white-slight">
-          <img src="${image}" class="img-fluid" alt="">
-          <a href="#snackCard-${id}">
-            <div class="mask"></div>
+          <img src="${image}" class="img-fluid" alt="${name}">
+          <a href="#snackCard-${id}" data-target='#snackModal' data-toggle='modal' class='modalBtn' id='snackModal' >
+            <div id='snack-${id}' class="mask"></div>
           </a>
         </div>
         <!--/.Card image-->
 
         <!--Button-->
-        <a href="#snackCard-${id}" class="btn-floating btn-action blue-gradient"><i class="fa fa-chevron-right"></i></a>
-
+      <a href="#snackCard-${id}" data-toggle='modal' data-target='#snackModal' class="btn-floating modalBtn btn-action blue-gradient"><i id='snack-${id}' class="fa fa-chevron-right"></i></a>
         <!--Card content-->
         <div class="card-body">
             <!--Title-->

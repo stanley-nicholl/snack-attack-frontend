@@ -278,3 +278,37 @@ input{
   }
 
 }
+
+/******  Single Snack View CSS   *******/
+.snackDeetsHeader{
+  background-color: #00C851;
+}
+.snackDeetsFormat{
+  display: flex;
+  flex-direction: row;
+}
+
+ .ulNoBullets {
+    list-style: none;
+ }
+
+ .snack-header{
+   font-family: Oswald;
+   font-size: 3rem;
+   color: #2d2d2d;
+ }
+ .snack-sub-header{
+   font-family: Oswald;
+   font-size: 2rem;
+   color: grey;
+ }
+#showDeets img ,h4, h3, p {
+  padding: 0rem 1rem 0 0rem;
+}
+
+#reviewSnackBtn{
+  justify-content: flex-end;
+}
+#ulStarReview {
+  padding:0;
+}
