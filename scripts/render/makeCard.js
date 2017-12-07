@@ -187,7 +187,9 @@ function loadHomePage(){
         body.username = document.getElementById('create-username').value
         body.password = document.getElementById('create-password').value
         body.email = document.getElementById('create-email').value
-        // AXIOS CALL TO CREATE AUTHENTICATION ROUTE
+        // AXIOS CALL TO CREATE USER ROUTE
+        User.createUser(body)
+
       })
 
       document.getElementById('signin-button').addEventListener('click', (event) => {
@@ -195,6 +197,7 @@ function loadHomePage(){
         body.username = document.getElementById('login-username').value
         body.password = document.getElementById('login-password').value
         // AXIOS CALL TO LOGIN AUTHENTICATION ROUTE
+        Auth.authorizeRequest(body)
       })
     }else{
       return null
