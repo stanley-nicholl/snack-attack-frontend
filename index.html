@@ -15,13 +15,17 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/index.css" rel="stylesheet">
-
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./scripts/templates/cardTemplate.js"></script>
   <script src="./scripts/templates/snack-modal.js"></script>
   <script src="./scripts/templates/snack-modal-reviews.js"></script>
+  <script src="./scripts/templates/reviewModal.js"></script>
+  <script src="./scripts/render/starRating.js"></script>
+  <script src="./scripts/templates/snackDetailButton.js"></script>
   <script src="./scripts/routes/app.js"></script>
   <script src="./scripts/render/index.js"></script>
+
 
   <script src="./scripts/routes/user-routes.js"></script>
   <script src="./scripts/routes/snacks-routes.js"></script>
@@ -50,7 +54,7 @@
     <h2 class="content-header mb-3">SNACK HARD</h2>
 
     <div class="row d-flex justify-content-around" id="cardContainer">
-
+      <!-- Snack Details Modal  -->
       <div class="mx-auto ">
         <div class="col mx-auto modal" id="snackModal" role='dialog' aria-labelledby="snackName" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
@@ -62,15 +66,14 @@
                   <div class="">
                     <ul id='ulStarReview' class="d-flex ulNoBullets  mt-3">
                       <medium><strong>rating </strong></medium>
-                      <li><a href="#"><i class="fa fa-star"></i></a></li>
-                      <li><a href="#"><i class="fa fa-star"></i></a></li>
-                      <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
-                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
+                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
+                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
+                      <li><a href="#"><i class=" fa fa-star-o"></i></a></li>
+                      <li><a href="#"><i class=" fa fa-star-o"></i></a></li>
                     </ul>
                   </div>
-                  <div class="">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="reviewSnackBtn"></button>
+                  <div id='reviewModalBtnContainer'>
                   </div>
                 </div>
 
@@ -84,15 +87,11 @@
                     </a>
                   </div>
                   <div class="col float-right">
-                    <div class=" ">
+                    <div >
                       <h3 class="snack-sub-header"> Details</h3>
                       <p id='snackDescription'></p>
                     </div>
                     <hr>
-
-
-
-
 
                     <div class="reviews ">
 
@@ -101,8 +100,6 @@
 
                       </div>
                     </div>
-
-
                   </div>
                 </div>
               </div>
@@ -110,6 +107,47 @@
           </div>
         </div>
       </div>
+
+<!-- new review modal  -->
+      <div class="mx-auto ">
+        <div class="col mx-auto modal" id="reviewModal" role='dialog' aria-labelledby="reviewName" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header d-flex flex-column snackDeetsHeader">
+                <button type="button" class="close" data-dismiss='modal' aria-label="Close"><span aria-hidden="true"> &times;</span></button>
+                <h3>Write a new review</h3>
+              </div>
+              <div class="p-2">
+                <form>
+                  <div class="form-group">
+                    <h4> Title </h4>
+                    <input type="text" class="form-control" id="newReviewTitle" placeholder="Title">
+                  </div>
+                  <div class="form-group">
+                    <h4> Review </h4>
+                    <textarea class="form-control" id="newReviewContent" placeholder="Write your review" rows="3"></textarea>
+                  </div>
+                    <div class="">
+                      <ul id='ulStarReview' class="d-flex ulNoBullets mt-3">
+                        <medium><strong>rating </strong></medium>
+                        <li><a href="#" ><i id="star-1" class="stars fa fa-star"></i></a></li>
+                        <li><a href="#" ><i id="star-2" class="stars fa fa-star"></i></a></li>
+                        <li><a href="#" ><i id="star-3" class="stars fa fa-star"></i></a></li>
+                        <li><a href="#" ><i id="star-4" class="stars fa fa-star-o"></i></a></li>
+                        <li><a href="#" ><i id="star-5" class="stars fa fa-star-o"></i></a></li>
+                      </ul>
+                    </div>
+                    <button type="submit" id="submitReviewBtn" class="btn btn-primary" > Submit Review </button>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- review modal end  -->
+    </div>
+  </div>
+
       </div>
       <footer class="fixed-bottom mt-5 container-fluid">
         <div class="container d-flex justify-content-center align-items-center py-1">

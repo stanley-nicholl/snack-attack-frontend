@@ -24,6 +24,6 @@ window.Snacks = {
 
 
 window.AddTokenToHeader = function () {
-    let token = localStorage.getItem('Auth')
-    axios.defaults.headers.common['Auth'] = token
+    let token = localStorage.getItem('auth')
+    axios.defaults.headers.common['auth'] = token
 }

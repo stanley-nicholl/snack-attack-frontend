@@ -6,7 +6,7 @@ function cardTemplate(id, name, image, description, aveRating){
         <!--Card image-->
         <div class="view overlay hm-white-slight">
           <img src="${image}" class="img-fluid" alt="${name}">
-          <a href="#snackCard-${id}" data-target='#snackModal' data-toggle='modal' class='modalBtn' id='snackModal' >
+          <a href="#snackCard-${id}" data-target='#snackModal' data-toggle='modal' class='modalBtn' >
             <div id='snack-${id}' class="mask"></div>
           </a>
         </div>

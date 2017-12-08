@@ -8,6 +8,10 @@ window.Reviews = {
     return axios.get(`${baseReviewsURL}/${id}`)
 
   },
+  makeReview(body){
+    AddTokenToHeader()
+    return axios.post(`${baseReviewsURL}/`, body)
+  },
   destroyReview (id) {
     AddTokenToHeader()
     return axios.delete(`${baseReviewsURL}/${id}`)
