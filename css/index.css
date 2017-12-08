@@ -207,7 +207,7 @@ footer{
 
 input{
   font-size: .8rem !important;
-  color: #fff !important;
+  /*color: #fff !important;*/
 }
 
 #join-button, #signin-button{

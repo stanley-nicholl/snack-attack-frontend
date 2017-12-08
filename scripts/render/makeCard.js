@@ -31,7 +31,6 @@ function loadHomePage(){
   let reviewsArray=[]
   // let storage = localStorage.getItem('Auth')
   loadLoginModal()
-  localStorage.setItem('snackToken', 'yep')
   Snacks.getAllSnacks()
     .then(snacks => {
       let snackArray = snacks.data.snacks
@@ -153,7 +152,7 @@ function loadHomePage(){
         loginModal.style.display = "none";
       })
       window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target == loginModal) {
             loginModal.style.display = "none";
         }
       }
@@ -166,16 +165,17 @@ function loadHomePage(){
         body.password = document.getElementById('create-password').value
         body.email = document.getElementById('create-email').value
         // AXIOS CALL TO CREATE USER ROUTE
-        User.createUser(body)
+        Auth.signup(body)
 
       })
 
       document.getElementById('signin-button').addEventListener('click', (event) => {
+        console.log('testing');
         const body ={}
-        body.username = document.getElementById('login-username').value
+        body.email = document.getElementById('login-email').value
         body.password = document.getElementById('login-password').value
         // AXIOS CALL TO LOGIN AUTHENTICATION ROUTE
-        Auth.authorizeRequest(body)
+        Auth.login(body)
       })
     }else{
       return null
