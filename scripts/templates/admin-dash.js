@@ -44,7 +44,7 @@ function adminDashTemplate(){
         <p class="card-punch"><span>With great power comes great responsibility.</span></p>
       </div>
       <!--Button-->
-      <a id="load-users" class="btn btn-primary mx-5 mb-3 blue-gradient">Weild User Tools</a>
+      <a id="load-users" class="btn btn-primary mx-5 mb-3 blue-gradient">Wield User Tools</a>
       <!--/.Card content-->
 
     </div>

@@ -1,4 +1,14 @@
+let currentUser = {}
+
 function loadPage(){
+  Auth.current()
+  .then(users => {
+    currentUser.type = users.data.currentUser.userType
+    currentUser.first_name = users.data.currentUser.first_name
+    currentUser.id = users.data.currentUser.id
+    currentUser.username = users.data.currentUser.username
+    document.getElementById('user').textContent = currentUser.first_name[0].toUpperCase() +currentUser.first_name.slice(1)
+  })
   document.getElementById('content').innerHTML = adminDashTemplate()
   document.getElementById('load-snacks').addEventListener('click', (event) => {
     event.preventDefault()
@@ -16,7 +26,6 @@ function loadUserList(){
   Users.getAllUsers()
     .then(users => {
       const userArray = users.data.users
-      console.log(users);
       userArray.sort(itemSort)
       document.getElementById('content').innerHTML = adminUserListTemplate(userArray)
       document.getElementById('back-to-dashboard').addEventListener('click', (event) => {

@@ -1,5 +1,5 @@
 const cardContainer = document.querySelector('#cardContainer')
-
+let currentUser = {}
 function showReviewModal(){
 
   let newDiv = document.createElement('div')
@@ -26,6 +26,16 @@ const makeReview = (event) => {
 
 
 function loadHomePage(){
+  Auth.current()
+  .then(users => {
+    currentUser.type = users.data.currentUser.userType
+    currentUser.first_name = users.data.currentUser.first_name
+    currentUser.id = users.data.currentUser.id
+    currentUser.username = users.data.currentUser.username
+    document.getElementById('user').textContent = currentUser.first_name[0].toUpperCase() +currentUser.first_name.slice(1)
+    if(user.type !== 'admin') document.getElementById('admin').textContent = ''
+  })
+
 //get all snacks then format them into an object with {images, name, description, rating}
   let functionSnackArray=[]
   let reviewsArray=[]
@@ -166,7 +176,7 @@ function loadHomePage(){
         body.email = document.getElementById('create-email').value
         // AXIOS CALL TO CREATE USER ROUTE
         Auth.signup(body)
-
+        loginModal.style.display = "none";
       })
 
       document.getElementById('signin-button').addEventListener('click', (event) => {
@@ -176,6 +186,7 @@ function loadHomePage(){
         body.password = document.getElementById('login-password').value
         // AXIOS CALL TO LOGIN AUTHENTICATION ROUTE
         Auth.login(body)
+        loginModal.style.display = "none";
       })
     }else{
       return null
