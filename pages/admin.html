@@ -31,6 +31,7 @@
     <script src="../scripts/templates/admin-snack-list.js"></script>
     <script src="../scripts/templates/admin-user-list.js"></script>
     <script src="../scripts/templates/admin-dash.js"></script>
+    <script src="../scripts/templates/error-modal.js"></script>
     <script src="../scripts/routes/user-routes.js"></script>
     <script src="../scripts/routes/snacks-routes.js"></script>
     <script src="../scripts/routes/app.js"></script>
@@ -55,7 +56,6 @@
 
     <div class="container content" id="content"></div>
 
-
     <footer class="fixed-bottom mt-5 container-fluid">
       <div class="container d-flex justify-content-center align-items-center py-1">
         <img class="snack-logo mx-4" src="../img/snack_logo.svg" alt="">
@@ -65,8 +65,8 @@
 
 
 
-   <!-- DELETE MODAL -->
-     <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <!-- DELETE USER MODAL -->
+     <div class="modal fade" id="delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
        <div class="modal-dialog modal-notify modal-danger" role="document">
          <!--Content-->
          <div class="modal-content">
@@ -89,7 +89,7 @@
 
            <!--Footer-->
            <div class="modal-footer justify-content-center">
-             <a type="button" id="confirm-delete" class="btn btn-primary-modal">Delete User<i class="fa fa-bomb ml-1"></i></a>
+             <a type="button" id="confirm-user-delete" class="btn btn-primary-modal">Delete User<i class="fa fa-bomb ml-1"></i></a>
              <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</a>
            </div>
          </div>
@@ -97,6 +97,185 @@
        </div>
      </div>
      <!-- Central Modal Medium Danger-->
+
+     <!-- DELETE SNACK MODAL -->
+       <div class="modal fade" id="delete-snack-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-notify modal-danger" role="document">
+           <!--Content-->
+           <div class="modal-content">
+             <!--Header-->
+             <div class="modal-header">
+             <p class="heading lead">Delete Snack</p>
+
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true" class="white-text">&times;</span>
+             </button>
+             </div>
+
+             <!--Body-->
+             <div class="modal-body">
+               <div class="text-center">
+                   <i class="fa fa-close fa-4x mb-3 animated rotateIn"></i>
+                   <p>You wield great power, please use responsibily. Are you sure you want to DELETE this snack?</p>
+               </div>
+             </div>
+
+             <!--Footer-->
+             <div class="modal-footer justify-content-center">
+               <a type="button" id="confirm-snack-delete" class="btn btn-primary-modal">Delete Snack<i class="fa fa-bomb ml-1"></i></a>
+               <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</a>
+             </div>
+           </div>
+             <!--/.Content-->
+         </div>
+       </div>
+       <!-- Central Modal Medium Danger-->
+
+     <!--User Modal-->
+    <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modal" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+                <!--Header-->
+                <div class="modal-header blue-gradient white-text">
+                    <h4 class="title"><i class="fa fa-pencil"></i> Edit User</h4>
+                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div id="user-modal-body" class="modal-body mb-0">
+
+
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--User Modal-->
+
+    <!--Snack Modal-->
+   <div class="modal fade" id="snack-modal" tabindex="-1" role="dialog" aria-labelledby="snack-modal" aria-hidden="true">
+       <div class="modal-dialog cascading-modal" role="document">
+           <!--Content-->
+           <div class="modal-content">
+
+               <!--Header-->
+               <div class="modal-header peach-gradient white-text">
+                   <h4 class="title"><i class="fa fa-pencil"></i>Add/Edit Snack</h4>
+                   <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+               </div>
+               <!--Body-->
+                <div id="snack-modal-body" class="snack-modal-body mb-0">
+
+
+                </div>
+            </div>
+            <!--/.Content-->
+           </div>
+           <!--/.Content-->
+       </div>
+   </div>
+   <!--Snack Modal-->
+
+   <!-- Success Modal -->
+    <div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Success!</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p id="success-modal-content"></p>
+                </div>
+
+                <!--Footer-->
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+  </div>
+   <!-- Success Modal -->
+
+   <!-- ERROR MODAL-->
+       <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-message" aria-hidden="true">
+           <div class="modal-dialog modal-notify modal-warning" role="document">
+               <!--Content-->
+               <div class="modal-content">
+                   <!--Header-->
+                   <div class="modal-header">
+                       <p class="heading lead">Modal Warning</p>
+
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true" class="white-text">&times;</span>
+                       </button>
+                   </div>
+
+                   <!--Body-->
+                   <div id="error-modal-body" class="modal-body">
+                       <!-- <div class="text-center">
+                           <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
+                               ab officiis totam.</p>
+                       </div> -->
+                   </div>
+
+                   <!--Footer-->
+                   <div class="modal-footer justify-content-center">
+                   </div>
+               </div>
+               <!--/.Content-->
+           </div>
+       </div>
+       <!-- ERROR MODAL-->
+
+       <!-- Central Modal Medium Success -->
+    <div class="modal fade modal-lg" id="large-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Modal Success</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
+                            ab officiis totam.</p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-primary-modal">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                    <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">No, thanks</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success-->
+
   </body>
 
 </html>

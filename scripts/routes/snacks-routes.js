@@ -16,9 +16,16 @@ window.Snacks = {
     AddTokenToHeader()
     return axios.put(`${baseSnacksURL}/${id}`, body)
   },
+
   getAllSnackReviews (id) {
     AddTokenToHeader()
     return axios.get(`${baseSnacksURL}/${id}/reviews`)
+  },
+
+  addSnack (body) {
+    AddTokenToHeader()
+    return axios.post(`${baseSnacksURL}`, body)
+
   }
 }
 
