@@ -1,6 +1,6 @@
 
 function starRating(snackId){
-  console.log(snackId);
+
   let stars = document.getElementsByClassName('stars')
   let rating=0
   let ulRating = document.querySelector('#ulStarReview')

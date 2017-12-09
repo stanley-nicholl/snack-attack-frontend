@@ -1,24 +1,18 @@
 function snackReviewsTemplate(review){
   const { id, content, title, rating} = review
-  let stars = [
-              // {star1=''},
-              // {star2=''},
-              // {star3=''},
-              // {star4=''},
-              // {star5=''}
-              ]
+  let stars = []
 
-  console.log(typeof rating, rating);
+
   for(let i = 0; i < 5; i++){
-    console.log(stars[i]);
-    if(i <= rating){
+
+    if(i+1 <= rating){
       stars[i]='dstars fa fa-star'
     }
     else{
       stars[i]="dstars fa fa-star-o"
     }
   }
-  console.log(stars);
+
 
 
 return `
@@ -47,3 +41,4 @@ return `
 
 `
 }
+ 

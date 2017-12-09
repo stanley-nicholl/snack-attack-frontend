@@ -74,6 +74,8 @@ function loadHomePage(){
       .then (snack => {
 
         for(let i in snack){
+          // console.log(snack[i].id);
+
           let newDiv = document.createElement('div')
           newDiv.className = 'col-xl-4 col-md-6 col-sm-7 mt-5'
           cardContainer.appendChild(newDiv)
@@ -140,6 +142,7 @@ function loadHomePage(){
 
   }
 function getSnackModal(snackId){
+
   Snacks.getSnack(snackId)
   .then(snack => {
     // grab title, pic, and description for one snack
@@ -200,7 +203,7 @@ function getSnackModal(snackId){
         let rating = el.rating
         let review = snackReviewsTemplate(el)
         reviewContainer.innerHTML+=review
-     
+
       })
 
       if(reviewContainer.innerHTML=== ''){
@@ -223,12 +226,6 @@ function getSnackModal(snackId){
     })
   })
 }
-// function addUserToReview(userId, reviewId){
-//   Users.getUser(userId)
-//     .then( user => {
-//       let reviewElement = document.getElementById(`userName-${reviewId}`)
-//       reviewElement.innerHTML=`${user.data.users.username}`
-//     })
-// }
+
 
 loadHomePage()

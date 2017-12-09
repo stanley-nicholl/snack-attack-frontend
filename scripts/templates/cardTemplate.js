@@ -1,5 +1,5 @@
 function cardTemplate(id, name, image, description, aveRating){
-
+  // console.log(aveRating);
   return  `
       <div class="card" id='snack-${id}'>
 
