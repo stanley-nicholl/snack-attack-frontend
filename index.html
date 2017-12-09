@@ -66,11 +66,11 @@
                   <div class="">
                     <ul id='ulStarReview' class="d-flex ulNoBullets  mt-3">
                       <medium><strong>rating </strong></medium>
-                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
-                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
-                      <li><a href="#"><i class=" fa fa-star"></i></a></li>
-                      <li><a href="#"><i class=" fa fa-star-o"></i></a></li>
-                      <li><a href="#"><i class=" fa fa-star-o"></i></a></li>
+                      <li><a ><i class="dstars fa fa-star"></i></a></li>
+                      <li><a ><i class="dstars fa fa-star"></i></a></li>
+                      <li><a ><i class="dstars fa fa-star"></i></a></li>
+                      <li><a ><i class="dstars fa fa-star-o"></i></a></li>
+                      <li><a ><i class="dstars fa fa-star-o"></i></a></li>
                     </ul>
                   </div>
                   <div id='reviewModalBtnContainer'>
@@ -115,7 +115,7 @@
             <div class="modal-content">
               <div class="modal-header d-flex flex-column snackDeetsHeader">
                 <button type="button" class="close" data-dismiss='modal' aria-label="Close"><span aria-hidden="true"> &times;</span></button>
-                <h3>Write a new review</h3>
+                <h3 id="makeNewReviewTitle"></h3>
               </div>
               <div class="p-2">
                 <form>
@@ -130,14 +130,14 @@
                     <div class="">
                       <ul id='ulStarReview' class="d-flex ulNoBullets mt-3">
                         <medium><strong>rating </strong></medium>
-                        <li><a href="#" ><i id="star-1" class="stars fa fa-star"></i></a></li>
-                        <li><a href="#" ><i id="star-2" class="stars fa fa-star"></i></a></li>
-                        <li><a href="#" ><i id="star-3" class="stars fa fa-star"></i></a></li>
-                        <li><a href="#" ><i id="star-4" class="stars fa fa-star-o"></i></a></li>
-                        <li><a href="#" ><i id="star-5" class="stars fa fa-star-o"></i></a></li>
+                        <li><a ><i id="star-1" class="stars fa fa-star"></i></a></li>
+                        <li><a ><i id="star-2" class="stars fa fa-star"></i></a></li>
+                        <li><a ><i id="star-3" class="stars fa fa-star"></i></a></li>
+                        <li><a ><i id="star-4" class="stars fa fa-star-o"></i></a></li>
+                        <li><a ><i id="star-5" class="stars fa fa-star-o"></i></a></li>
                       </ul>
                     </div>
-                    <button type="submit" id="submitReviewBtn" class="btn btn-primary" > Submit Review </button>
+                    <button type="submit" id="submitReviewBtn" class="btn btn-primary" data-dismiss='modal'> Submit Review </button>
                 </form>
             </div>
             </div>
