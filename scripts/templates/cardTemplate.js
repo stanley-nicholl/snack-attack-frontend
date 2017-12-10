@@ -40,12 +40,12 @@ function cardTemplate(id, name, image, description, rating){
         <!-- Card footer -->
         <div class="card-data blue-gradient">
           <ul>
-            <li><a href="#"><small>rating</small></a></li>
-            <li><a href="#"><i class='${stars[0]}'></i></a></li>
-            <li><a href="#"><i class='${stars[1]}'></i></a></li>
-            <li><a href="#"><i class='${stars[2]}'></i></a></li>
-            <li><a href="#"><i class='${stars[3]}'></i></a></li>
-            <li><a href="#"><i class='${stars[4]}'></i></a></li>
+            <li><a><small>rating</small></a></li>
+            <li><a><i class='${stars[0]}'></i></a></li>
+            <li><a><i class='${stars[1]}'></i></a></li>
+            <li><a><i class='${stars[2]}'></i></a></li>
+            <li><a><i class='${stars[3]}'></i></a></li>
+            <li><a><i class='${stars[4]}'></i></a></li>
           </ul>
         </div>
         <!-- Card footer -->

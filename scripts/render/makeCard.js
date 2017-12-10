@@ -145,22 +145,28 @@ function getSnackModal(snackId){
 
   Snacks.getSnack(snackId)
   .then(snack => {
-
+    console.log('heyo');
     let rating = snack.data.snacks.rating
 
     for(let i = 1; i <= 5; i++){
 
       if(rating > 5){
         let star = document.querySelector(`#sId-${i}`)
+        star.classList.remove('dstars', 'fa', 'fa-star-o')
         star.classList.add('dstars', 'fa', 'fa-star')
+        // star.className='dstars fa fa-star'
       }
       else if( i <= rating){
         let star = document.querySelector(`#sId-${i}`)
+        star.classList.remove('dstars', 'fa', 'fa-star-o')
         star.classList.add('dstars', 'fa', 'fa-star')
+        // star.className='dstars fa fa-star'
       }
       else{
         let star = document.querySelector(`#sId-${i}`)
+        star.classList.remove('dstars', 'fa', 'fa-star')
         star.classList.add('dstars', 'fa', 'fa-star-o')
+        // star.className='dstars fa fa-star'
       }
     }
     // grab title, pic, and description for one snack
