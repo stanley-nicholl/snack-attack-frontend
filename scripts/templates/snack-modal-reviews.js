@@ -1,8 +1,6 @@
 function snackReviewsTemplate(review){
   const { id, content, title, rating} = review
   let stars = []
-
-
   for(let i = 0; i < 5; i++){
 
     if(i+1 <= rating){
@@ -41,4 +39,3 @@ return `
 
 `
 }
- 

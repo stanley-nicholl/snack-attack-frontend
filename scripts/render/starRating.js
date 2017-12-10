@@ -29,15 +29,9 @@ function starRating(snackId){
 
         ulRating.dataset.rating=rating
         fillStarsDown(starIdNum+1)
-
-
       }
-
     })
-
   }
-
-
 }
 
 function fillStarsDown(starIdNum){

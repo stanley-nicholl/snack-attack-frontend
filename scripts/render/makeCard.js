@@ -35,7 +35,7 @@ const makeReview = (event) => {
   let resetRating = document.querySelector('#newReviewTitle').value
   //
   // newReviewContent=''
-  // rating=''
+  rating=''
   getSnackModal(snack_id)
 
 }
@@ -62,20 +62,20 @@ function loadHomePage(){
   loadLoginModal()
   Snacks.getAllSnacks()
     .then(snacks => {
+
       let snackArray = snacks.data.snacks
       functionSnackArray=snackArray
       let snackArr = snackArray.map(snack => {
         let {id, img, name, description} = snack
         return {id, img, name, description}
       })
-
-      return snackArr
+      // return snackArray?
+      return snacks
       })
-      .then (snack => {
+      .then (snackObj => {
 
+        let snack = snackObj.data.snacks
         for(let i in snack){
-          // console.log(snack[i].id);
-
           let newDiv = document.createElement('div')
           newDiv.className = 'col-xl-4 col-md-6 col-sm-7 mt-5'
           cardContainer.appendChild(newDiv)
@@ -145,6 +145,24 @@ function getSnackModal(snackId){
 
   Snacks.getSnack(snackId)
   .then(snack => {
+
+    let rating = snack.data.snacks.rating
+
+    for(let i = 1; i <= 5; i++){
+
+      if(rating > 5){
+        let star = document.querySelector(`#sId-${i}`)
+        star.classList.add('dstars', 'fa', 'fa-star')
+      }
+      else if( i <= rating){
+        let star = document.querySelector(`#sId-${i}`)
+        star.classList.add('dstars', 'fa', 'fa-star')
+      }
+      else{
+        let star = document.querySelector(`#sId-${i}`)
+        star.classList.add('dstars', 'fa', 'fa-star-o')
+      }
+    }
     // grab title, pic, and description for one snack
     let title = document.querySelector('#snackName')
     title.innerHTML = snack.data.snacks.name
