@@ -64,7 +64,10 @@ function loadHomePage(){
     .then(snacks => {
 
       let snackArray = snacks.data.snacks
-      functionSnackArray=snackArray
+      snackArray.sort((a,b) => {
+          return b.rating - a.rating
+      })
+      functionSnackArray = snackArray
       let snackArr = snackArray.map(snack => {
         let {id, img, name, description} = snack
         return {id, img, name, description}
