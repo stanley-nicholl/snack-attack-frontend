@@ -34,8 +34,13 @@ return `
   </div>
   <div>
     <p class='noReview' id='review-${id}'>${content} </p>
-    <hr>
+
   </div>
+  <div id='editReviewBtn'>
+    <button>Edit Review</button>
+    <button>Delete Review</button>
+  </div>
+  <hr>
 
 `
 }

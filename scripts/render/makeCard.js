@@ -232,6 +232,7 @@ function getSnackModal(snackId){
       //for each review populate title, content and id
       reviews.data.reviews.forEach( el => {
         let rating = el.rating
+
         let review = snackReviewsTemplate(el)
         reviewContainer.innerHTML+=review
 
@@ -244,6 +245,14 @@ function getSnackModal(snackId){
       return reviews
     })
     .then(reviews => {
+      console.log(currentUser.id);
+      for(let i = 0; i < reviews.length; i++){
+        if(currentUser.id === reviews.data.reviews[i].user_id){
+          let editBtn = document.querySelector('#editReviewBtn')
+          editBtn.innerHTML = newButton()
+        }
+      }
+
       reviews.data.reviews.forEach(el => {
         let userNamePH = document.querySelector(`#userName-${el.id}`)
 
@@ -255,6 +264,7 @@ function getSnackModal(snackId){
       })
 
     })
+    .then()
   })
 }
 
