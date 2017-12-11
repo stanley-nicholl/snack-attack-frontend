@@ -14,7 +14,7 @@ window.Users = {
   },
   updateUser (id, body) {
     AddTokenToHeader()
-    return axios.put(`${baseUserURL}/${id}`, body)
+    return axios.patch(`${baseUserURL}/${id}`, body)
   },
 
   createUser(body) {

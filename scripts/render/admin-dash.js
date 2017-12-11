@@ -178,7 +178,7 @@ function addEditListening(){
                 $('#error-modal').modal('toggle')
                 return null
               }
-              if(typeof body.price !== 'number'){
+              if(Number.isNaN(body.price/1)){
                 document.getElementById('error-modal-body').innerHTML = errorModalTemplate('Please be sure to use a number for price. Please try again.')
                 $('#snack-modal').modal('hide')
                 $('#error-modal').modal('toggle')

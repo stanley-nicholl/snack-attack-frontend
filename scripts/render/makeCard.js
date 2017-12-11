@@ -52,7 +52,7 @@ function loadHomePage(){
     currentUser.username = users.data.currentUser.username
     document.getElementById('user').textContent = currentUser.first_name[0].toUpperCase() +currentUser.first_name.slice(1)
     console.log(currentUser);
-    if(user.type !== 'admin') document.getElementById('admin').textContent = ''
+    if(currentUser.type === 'admin') document.getElementById('admin').textContent = 'Admin Dashboard'
   })
 
 //get all snacks then format them into an object with {images, name, description, rating}
@@ -137,7 +137,11 @@ function loadHomePage(){
         body.password = document.getElementById('login-password').value
         // AXIOS CALL TO LOGIN AUTHENTICATION ROUTE
         Auth.login(body)
-        loginModal.style.display = "none";
+          .then(result => {
+            loginModal.style.display = "none";
+            loadHomePage()
+          })
+
       })
     }else{
       return null
