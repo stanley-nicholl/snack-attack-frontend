@@ -1,4 +1,17 @@
-function cardTemplate(id, name, image, description, aveRating){
+function cardTemplate(id, name, image, description, rating){
+  // console.log(rating);
+
+
+  let stars = []
+  for(let i = 0; i < 5; i++){
+
+    if(i+1 <= rating){
+      stars[i]='dstars fa fa-star'
+    }
+    else{
+      stars[i]="dstars fa fa-star-o"
+    }
+  }
 
   return  `
       <div class="card" id='snack-${id}'>
@@ -27,12 +40,12 @@ function cardTemplate(id, name, image, description, aveRating){
         <!-- Card footer -->
         <div class="card-data blue-gradient">
           <ul>
-            <li><a href="#"><small>rating</small></a></li>
-            <li><a href="#"><i class="fa fa-star"></i></a></li>
-            <li><a href="#"><i class="fa fa-star"></i></a></li>
-            <li><a href="#"><i class="fa fa-star-half-full"></i></a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+            <li><a><small>rating</small></a></li>
+            <li><a><i class='${stars[0]}'></i></a></li>
+            <li><a><i class='${stars[1]}'></i></a></li>
+            <li><a><i class='${stars[2]}'></i></a></li>
+            <li><a><i class='${stars[3]}'></i></a></li>
+            <li><a><i class='${stars[4]}'></i></a></li>
           </ul>
         </div>
         <!-- Card footer -->

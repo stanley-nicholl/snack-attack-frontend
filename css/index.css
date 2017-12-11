@@ -312,3 +312,16 @@ input{
 #ulStarReview {
   padding:0;
 }
+ .stars {
+   color:gold;
+
+ }
+ .dstars {
+   color:gold;
+
+ }
+ .stars:hover{
+   color: #00C851;
+   cursor: pointer;
+
+ }

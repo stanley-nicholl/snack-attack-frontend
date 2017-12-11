@@ -1,5 +1,17 @@
 function snackReviewsTemplate(review){
-  const { id, content, title} = review
+  const { id, content, title, rating} = review
+  let stars = []
+  for(let i = 0; i < 5; i++){
+
+    if(i+1 <= rating){
+      stars[i]='dstars fa fa-star'
+    }
+    else{
+      stars[i]="dstars fa fa-star-o"
+    }
+  }
+
+
 
 return `
   <div class='justify-content-start'>
@@ -12,11 +24,11 @@ return `
     <div class='justify-content-start'>
       <ul class="d-flex ulNoBullets " id='ulStarReview'>
         <medium><strong>rating </strong></medium>
-        <li><i class="fa fa-star"></i></li>
-        <li><i class="fa fa-star"></i></li>
-        <li><i class="fa fa-star-half-full"></i></li>
-        <li><i class="fa fa-star-o"></i></li>
-        <li><i class="fa fa-star-o"></i></li>
+        <li><i class='${stars[0]}'></i></li>
+        <li><i class='${stars[1]}'></i></li>
+        <li><i class='${stars[2]}'></i></li>
+        <li><i class='${stars[3]}'></i></li>
+        <li><i class='${stars[4]}'></i></li>
       </ul>
     </div>
   </div>
@@ -26,8 +38,4 @@ return `
   </div>
 
 `
-}
-
-function hasReview(content){
-  return content ? content : 'Be the first to review this snack!'
 }
